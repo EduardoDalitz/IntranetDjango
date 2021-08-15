@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="bg">
+    <div class="wrap">
+        <div id="main">
+                    
+            <div id="intro">
+                
+                <h2 class="inner">Bem vindo {{ user.get_full_name }}</h2> 
+                <p>Você está acessando a <strong>intranet</strong> Brascola. Aqui você irá encontrar muitas informações que trarão maior agilidade
+                ao seu dia a dia dentro da organização, como lista de ramais e emails de todos os funcionários.</p>
+                
+                <p>Você pode conferir também todas as edições dos informativos da Brascola <i>(Jornal do Front)</i>.</p>
+                
+                <p>Caso haja algum dado incorreto, favor enviar email para 
+                <a href="mailto:ti@brascola.com.br" title="Enviar um email">ti@brascola.com.br</a>.</p>
+                
+            </div>
+            <div id="bits" >
+                <div class="bit" style="height: 220px; padding: 10px; border-width: 3px; border-style: solid; border-color: rgb(155, 155, 155); border-radius: 10px; margin-right: 5%; margin-bottom: 5%;" >
+                    
+                    <div class="photo">
+                        <a href="https:/www.lojabrascola.com.br/"><img src="{% static 'images/logoEcommerce.png' %}" alt="Ecommerce" /></a>
+                    </div>
+                    <h5> Confira os produtos disponíveis no E-commerce Brascola.</h5>
+                    <p class="more"><a class='bot_index' href="https://www.lojabrascola.com.br/">Acessar E-commerce</a></p>
+                </div>
+                <div class="bit"  style="height: 220px; padding: 10px; border-width: 3px; border-style: solid; border-color: rgb(155, 155, 155); border-radius: 10px; margin-right: 5%; margin-bottom: 5%;" >
+
+                    <div class="photo">
+                        <a href="http://www.brascola.com.br/"><img  style= "margin-top: 17px; "src="{% static 'images/Logo.png' %}" alt="Site oficial" /></a>
+                    </div>
+                    <h5 style="margin-top: 30px;">Visitar site oficial</h5>
+                    <p class="more"><a class='bot_index' style="margin-top: 30%;" href="http://www.brascola.com.br/">Acessar site</a></p>
+                </div>
+                <div class="bit" style="height: 240px; padding: 10px; border-width: 3px; border-style: solid; border-color: rgb(155, 155, 155); border-radius: 10px; margin-right: 5%;" >
+                    
+                    <div class="photo">
+                       <a href="http://ti.brascola.com.br"><img src="{% static 'images/thumb1.png' %}" alt="HelpDesk - Abra um chamado" /></a>
+                    </div>
+                    <h5>Problemas com os equipamentos de informática ou relacionados a Tecnologia da Informação</h5>
+                    <p class="more" >
+                        <a class='bot_index' style="margin-top: 0px ;" href="http://ti.brascola.com.br" title="Clique aqui para abrir um chamado" target="_blank">Abrir chamado</a>
+                    </p>
+                </div>
+                
+                <div class="bit" style="height: 240px; padding: 10px; border-width: 3px; border-style: solid; border-color: rgb(155, 155, 155); border-radius: 10px; margin-right: 5%; " >
+                    
+                    <div class="photo">
+                        <a href="galeria_fotos.html"><img src="{% static 'images/thumb2.png' %}" alt="Galeria de Fotos" /></a> 
+                    </div>
+                    <h5>Confira aqui todas as fotos dos colaboradores nos últimos eventos da Brascola.</h5>
+                    <p class="more"><a class='bot_index' style="margin-top: 15px;" href="galeria_fotos.html"  
+                    >Abrir Galeria</a></p>
+                </div>
+               
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<style>
+.add-div{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+}
+
+.fas.fa-plus{
+    color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.fas.fa-search{
+    position: absolute;
+    top: 12px;
+    right: 26px;
+}
+
+.search-div{
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.offset-1col-10list-div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#search{
+    max-width: 100px;
+}
+
+.msg{
+    background-color:#379e33c7;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+    width: 97.5%;
+    text-align: center;
+    margin-bottom: 3%;
+
+}
+.but {
+    background-color: #4CAF50; /* Green */
+    border-radius: 5px;
+    color: white;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0px 2px;
+    cursor: pointer;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/f5c6390071.js" crossorigin="anonymous"></script>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+
+            <h2 class="inner" style="padding: 0; margin-top: 10%; margin-bottom: 5%; text-align: center; background-color: #3d7a87;
+            color: white;">Feed de Notícias</strong></h2>
+            
+            <div id="main3">
+                <div class="offset-1col-10list-div">
+
+                    {% if user.is_authenticated %}
+
+                    <div class="offset-1col-10list-div">
+                        <a href="/teste.html">
+                            <div class="col-2 add-div">
+                                <i class="fas fa-plus" ></i>
+                                Editar
+                            </div>
+                        </a>
+                    </div>
+
+
+                    {% else %}
+                    <div class="offset-1col-10list-div">
+                        <a href="/accounts/login">
+                            <div class="col-2 add-div">
+                                <i class="fas fa-plus" ></i> 
+                                Realizar Login
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    <div class="col-9search-div">
+                        <form method="GET" id="search-form" style="cursor:pointer">
+                            <input class="form-control" type="text" name="search" id="search" placeholder="Buscar Notícias" value="{{ request.GET.search }}" 
+                            style="padding:3px; border-radius: 5px;">
+                            <i class="fa fa-search" aria-hidden="true" id="search-btn"></i>
+                        </form>    
+                    </div>
+                </div>
+
+				<table align="center" style="margin-top: 20px; margin-bottom: 20px;" >
+<script>
+    var lista = [];
+    var listaTit = [];
+</script>
+                    {% for task in tasks %}
+
+                        
+
+                            <div style="background-color: rgb(218, 216, 216, 0.3);
+                            padding: 10px; border-radius: 10px; margin-bottom: 20px; border-style: groove;">
+                                <h3 style="border-radius: 20px; text-align: center; font: bolder">{{task.title}}</h3>
+                                <p style=" margin-top:5%; text-align: center; border-radius: 20px; max-width: 100%;">{{task.description}}</p>
+                                <div style="text-align: center;">
+                                    
+                                {% if task.foto %}   
+                                    <script type="text/javascript">
+                                        
+                                        lista.push("{{ task.foto.url }}")
+                                        listaTit.push("{{ task.title }}")
+                                        function changeImage(a, b)
+                                        {   
+                                           
+
+                                            //document.getElementById(listaTit[0]).src=a;
+                                            //    console.log(a);
+                                            //    console.log(b);
+                                            //    console.log(document.getElementById(a));
+
+                                            if(listaTit[0] == b){
+                                                document.getElementById(listaTit[0]).src=a;
+                                                console.log(a);
+                                                console.log(b);
+                                                
+                                            }
+                                            if(listaTit[1] == b){
+                                                document.getElementById(listaTit[1]).src=a;
+                                                console.log(a);
+                                                console.log(b);
+                                            }
+                                            if(listaTit[2] == b){
+                                                document.getElementById(listaTit[2]).src=a;
+                                                console.log(a);
+                                                console.log(b);
+                                            }
+                                            if(listaTit[3] == b){
+                                                document.getElementById(listaTit[3]).src=a;
+                                                console.log(a);
+                                                console.log(b);
+                                            }
+                                            if(listaTit[4] == b){
+                                                document.getElementById(listaTit[4]).src=a;
+                                                console.log(a);
+                                                console.log(b);
+                                            }
+                                            
+                                        }
+
+                                        
+                                    </script>
+                                    
+                                    
+                                    <img src="{{ task.foto.url }}"  alt="" id="{{ task.title }}" style="min-width: 200px; max-height: 500px; max-width: 100%; margin-top:5%; border-radius: 10px;"></p>     
+                                    
+                                    
+
+
+                                        {% if task.foto2 %}
+                                    
+                                        <input type="button" class="but" value="1" onclick='changeImage("{{ task.foto.url }}", "{{task.title}}");'>
+                             
+                                        
+                                        <input type="button" class="but" value="2" onclick='changeImage("{{ task.foto2.url }}", "{{task.title}}");'>
+                                        
+                                            {% if task.foto3 %}
+                                            <input type="button" class="but" value="3" onclick='changeImage("{{ task.foto3.url }}", "{{task.title}}");'>
+                 
+                                                {% if task.foto4 %}
+                                                <input type="button" class="but" value="4" onclick='changeImage("{{ task.foto4.url }}", "{{task.title}}");'>
+                                                {% endif %}              
+                                            {% endif %}
+    
+                                        {% endif %}
+                                   
+                                {% endif %}    
+                                <strong>{{task.usuario}} - {{task.created_at}} </strong>
+                                </div>
+                                
+                            </div>
+                            
+					{% endfor %}
+                </table>
+                <div class="pag" style="text-align: center; margin-top: 3%; ">
+                    {% if tasks.has_previous %}
+                        <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left" style="color: #3a76d6;"></i></a>
+                    {% endif %}
+
+                    {% if tasks.paginator.num_pages %}
+                    <span class="current" >
+                        {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+                    </span>
+                    {% endif %}
+                    
+                    {% if tasks.has_next %}
+                        <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right" style="color: #3a76d6;"></i></a>
+                    {% endif %}
+                </div>
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+
+
+<script>
+console.log(lista)
+console.log(listaTit)  
+
+</script>
+{% endblock %}

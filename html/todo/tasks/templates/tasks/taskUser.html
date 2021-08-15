@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Usuários - Brascola</strong></h2>
+			<div id="main3">
+                <h3>Nome: {{task.Nome}}</h3>
+				<h3>Email: {{task.Email}}</h3>
+				<h3>Setor: {{task.Setor}}</h3>
+				<h3>Ramal: {{task.Ramal}}</h3>
+				
+			</div>
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

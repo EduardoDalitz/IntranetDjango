@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+	
+</style>
+
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main" >
+			<h2 class="inner">Base de conhecimento </h2>
+			
+			<table id="Diretoria Brascola Ltda: 2020" style="width: 50%; margin-left: 25%; " >
+				{% for task in tasks %}
+				<tr >
+					
+					<td ><div class="titulo3"><a href="{{task.foto.url }}">{{task.title}}</a></div></td>
+					
+				</tr>
+				{% endfor %}	
+			</table>
+			<div class="pag" style="text-align: center; margin-top: 3%; ">
+				{% if tasks.has_previous %}
+					<a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left" style="color: #3a76d6;"></i></a>
+				{% endif %}
+
+				{% if tasks.paginator.num_pages %}
+				<span class="current" >
+					{{ tasks.number }} de {{ tasks.paginator.num_pages }}
+				</span>
+				{% endif %}
+				
+				{% if tasks.has_next %}
+					<a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right" style="color: #3a76d6;"></i></a>
+				{% endif %}
+			</div>		
+		</div>
+	</div>		
+	
+
+</div>
+{% endblock %} 

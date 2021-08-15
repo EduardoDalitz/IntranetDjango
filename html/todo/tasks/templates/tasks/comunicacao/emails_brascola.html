@@ -1,0 +1,97 @@
+﻿
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+.add-div{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+}
+
+.offset-1col-10list-div{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Emails - Brascola</strong></h2>
+				
+			<div id="main3">
+				
+				<table align="center" id="Emails: Brascola Joinville">
+					<div class="offset-1col-10list-div">
+	
+						{% if user.is_authenticated %}
+	
+						<div class="offset-1col-10list-div">
+							<a href="/users.html">
+								<div class="col-2 add-div">
+									<i class="fas fa-plus" ></i>
+									Editar
+								</div>
+							</a>
+						</div>
+	
+	
+						{% else %}
+						<div class="offset-1col-10list-div">
+							<a href="/accounts/login">
+								<div class="col-2 add-div">
+									<i class="fas fa-plus" ></i>
+									Realizar Login
+								</div>
+							</a>
+						</div>
+						{% endif %}
+	
+						<div class="col-9search-div">
+							<form method="GET" id="search-form" style="cursor:pointer">
+								<input class="form-control" type="text" name="search" id="search" placeholder="Buscar Nomes" value="{{ request.GET.search }}" 
+								style="padding:3px; border-radius: 5px;">
+								<i class="fa fa-search" aria-hidden="true" id="search-btn"></i>
+							</form>    
+						</div>
+					</div>
+	
+					<table align="center" style="margin-top: 20px; margin-bottom: 20px;" >
+						
+					
+					<tr>
+						<td class="destaque"><div align="center">Nome</div></td>
+						<td class="destaque"><div align="center">Setor</div></td>
+						<td class="destaque"><div align="center">Email</div></td>
+					{% for task in tasks %}
+					<tr>
+						<td>{{task.Nome}}</a> </td>
+						<td>{{task.Setor}}</td>
+						<td>{{task.Email}}</td>
+						
+					</tr>
+					{% endfor %}
+					
+				</table>
+				
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

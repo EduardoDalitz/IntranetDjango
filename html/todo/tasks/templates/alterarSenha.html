@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.btn-btn-success{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+    margin-top: 5px;
+}
+
+#id_title{
+    width: 80%;
+    border-radius: 5px;
+    
+}
+
+#id_password{
+    width: 40%;
+    border-radius: 5px;
+    
+}
+#id_username{
+    width: 40%;
+    border-radius: 5px;
+    
+}
+
+#id_description{
+    width: 80%;
+    min-width: 50%;
+    max-width: 100%;
+    border-radius: 5px;
+
+}
+
+.msg{
+
+    background-color:#d30c0cea;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+    width: 97.5%;
+    text-align: center;
+    margin-bottom: 3%;
+
+}
+
+</style>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Alterar Senha - {{user.get_full_name}}</strong></h2>
+			<div id="main3">
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+
+                    {{ form.as_p }}
+                    {% if messages %}
+                    <ul class="message" id="">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="msg" {% endif %}>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <button type="submit" class="btn-btn-success">Confirmar</button>
+                </form>
+               
+                
+
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}
+

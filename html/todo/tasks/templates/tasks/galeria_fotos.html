@@ -1,0 +1,201 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+	.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+.add-div{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+	margin-left: 15px;
+	float: right;
+}
+.add-div:hover{
+    background-color:#1e4481;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+}
+
+#small_img{
+	margin-top: 10px; 
+	max-width: 170px; 
+	max-height: 100px;  
+	margin-top:5%; 
+	border-radius: 10px;
+}
+
+#normal_img{
+	width: 100%; 
+	height: 100%; 
+	max-width: 700px; 
+	max-height: 500px;
+
+}
+
+</style>
+<script>
+	function Mudarestado(el) {
+  var display = document.getElementById(el).style.display;
+  if (display == "none")
+    document.getElementById(el).style.display = 'block';
+  else
+    document.getElementById(el).style.display = 'none';
+}
+
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<div id="bg">
+	<div class="wrap">
+		<div id="main">
+		
+		<!-- portfolio bits -->
+		
+			<h2 class="inner">Galeria de Fotos</h2>
+
+				<div style=" max-width: 100%;  margin-left: 7%; margin-right: 5%; text-align: center;">
+					{% for task in tasks %}
+					<div style="
+						padding: 10px; border-radius: 10px; margin-bottom: 20px; border-style: groove;">
+						<p style="font-size: 20px;">{{task.title}}
+						
+							{% if task.foto %}
+								
+								<button type="button" class="col-2 add-div" onclick="Mudarestado('{{ task.foto.url }}')">Mostrar Fotos</button>	
+								
+							{% endif %}
+								<p style="margin-bottom: 10px; margin-top: 10px;">{{task.description}}</p>
+							{% if task.foto %}
+								<div id="{{ task.foto.url }}" style="display:none">
+								<div class="wrapper">
+							
+								<div class="photo" ><a href="#{{task.id}}"><img id="small_img" src="{{ task.foto.url }}" alt="Thumb"  ></a></div>
+								<div id="{{task.id}}"><img id = "normal_img" src="{{ task.foto.url }}" alt="" />
+								</div>
+						
+								{% if task.foto2 %} 
+									<div class="photo" ><a href="#{{task.id}}2"><img id="small_img" src="{{ task.foto2.url }}" alt="Thumb"></a></div>
+									<div id="{{task.id}}2"><img  id = "normal_img" src="{{ task.foto2.url }}" alt="" /></div>
+								{% endif %}		
+								{% if task.foto3 %}
+									<div class="photo" ><a href="#{{task.id}}3"><img id="small_img" src="{{ task.foto3.url }}" alt="Thumb"></a></div>
+									<div id="{{task.id}}3"><img id = "normal_img"  src="{{ task.foto3.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto4 %}
+									<div class="photo" ><a href="#{{task.id}}4"><img src="{{ task.foto4.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}4"><img id = "normal_img" src="{{ task.foto4.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto5 %}
+									<div class="photo" ><a href="#{{task.id}}5"><img src="{{ task.foto5.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}5"><img id = "normal_img" src="{{ task.foto5.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto6 %}
+									<div class="photo" ><a href="#{{task.id}}6"><img src="{{ task.foto6.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}6"><img id = "normal_img" src="{{ task.foto6.url }}" alt="" /><p></p></div>
+								{% endif %}
+								{% if task.foto7 %}
+									<div class="photo" ><a href="#{{task.id}}7"><img src="{{ task.foto7.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}7"><img id = "normal_img" src="{{ task.foto7.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto8 %}
+									<div class="photo" ><a href="#{{task.id}}8"><img src="{{ task.foto8.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}8"><img id = "normal_img" src="{{ task.foto8.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto9 %}
+									<div class="photo" ><a href="#{{task.id}}9"><img src="{{ task.foto9.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}9"><img id = "normal_img" src="{{ task.foto9.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto10 %}
+									<div class="photo" ><a href="#{{task.id}}10"><img src="{{ task.foto10.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}10"><img id = "normal_img" src="{{ task.foto10.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto11 %}
+									<div class="photo" ><a href="#{{task.id}}11"><img src="{{ task.foto11.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}11"><img id = "normal_img" src="{{ task.foto11.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto12 %}
+									<div class="photo" ><a href="#{{task.id}}12"><img src="{{ task.foto12.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}12"><img id = "normal_img" src="{{ task.foto12.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto13 %}
+									<div class="photo" ><a href="#{{task.id}}13"><img src="{{ task.foto13.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}13"><img id = "normal_img" src="{{ task.foto13.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto14 %}
+									<div class="photo" ><a href="#{{task.id}}14"><img src="{{ task.foto14.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}14"><img id = "normal_img" src="{{ task.foto14.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto15 %}
+									<div class="photo" ><a href="#{{task.id}}15"><img src="{{ task.foto15.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}15"><img id = "normal_img" src="{{ task.foto15.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto16 %}
+									<div class="photo" ><a href="#{{task.id}}16"><img src="{{ task.foto16.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}16"><img id = "normal_img" src="{{ task.foto16.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto17 %}
+									<div class="photo" ><a href="#{{task.id}}17"><img src="{{ task.foto17.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}17"><img id = "normal_img" src="{{ task.foto17.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto18 %}
+									<div class="photo" ><a href="#{{task.id}}18"><img src="{{ task.foto18.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}18"><img id = "normal_img" src="{{ task.foto18.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto19 %}
+									<div class="photo" ><a href="#{{task.id}}19"><img src="{{ task.foto19.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}19"><img id = "normal_img" src="{{ task.foto19.url }}" alt="" /><p></p></div>
+								{% endif %}	
+								{% if task.foto20 %}
+									<div class="photo" ><a href="#{{task.id}}20"><img src="{{ task.foto20.url }}" alt="Thumb" id="small_img"></a></div>
+									<div id="{{task.id}}20"><img id = "normal_img" src="{{ task.foto20.url }}" alt="" /><p></p></div>
+								{% endif %}	
+
+							</div>
+						</p></div>
+
+						{% endif %}
+						
+					</div>
+					{% endfor %}
+					
+
+
+					<div class="pag" style="text-align: center; margin-top: 3%; ">
+						{% if tasks.has_previous %}
+							<a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left" style="color: #3a76d6;"></i></a>
+						{% endif %}
+	
+						{% if tasks.paginator.num_pages %}
+						<span class="current" >
+							{{ tasks.number }} de {{ tasks.paginator.num_pages }}
+						</span>
+						{% endif %}
+						
+						{% if tasks.has_next %}
+							<a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right" style="color: #3a76d6;"></i></a>
+						{% endif %}
+					</div>	
+		</div>	
+	</div>
+</div>
+				<!-- /portfolio bits -->
+					
+	
+{% endblock %}

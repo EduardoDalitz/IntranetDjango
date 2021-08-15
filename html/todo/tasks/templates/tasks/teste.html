@@ -1,0 +1,136 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<style>
+.add-div{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+}
+
+.fas.fa-plus{
+    color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.fas.fa-search{
+    position: absolute;
+    top: 12px;
+    right: 26px;
+}
+
+.search-div{
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.offset-1col-10list-div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#search{
+    max-width: 100px;
+}
+
+.msg{
+    background-color:#379e33c7;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+    width: 97.5%;
+    text-align: center;
+    margin-bottom: 3%;
+
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Feed - Brascola</strong></h2>
+			<div id="main3">
+                <div class="offset-1col-10list-div">
+                    <a href="newtask/">
+                        <div class="col-2 add-div">
+                            <i class="fas fa-plus" ></i>
+                            Adicionar Notícias
+                        </div>
+                    </a>
+
+                    <div class="col-9search-div">
+                        <form method="GET" id="search-form" style="cursor:pointer">
+                            <input class="form-control" type="text" name="search" id="search" placeholder="Buscar Notícias" value="{{ request.GET.search }}" 
+                            style="padding:3px; border-radius: 5px;">
+                            <i class="fa fa-search" aria-hidden="true" id="search-btn"></i>
+                        </form>    
+                    </div>
+                </div>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="msg" {% endif %}>{{message}}</li>
+                        {% endfor %}
+
+                    </ul>
+                {% endif %}
+				<table align="center" >
+                    <tr>
+						<td class="destaque"><div align="center">Notícias do Front</div></td>
+                        
+
+                    {% for task in tasks %}
+                    <tr>
+                        <td><a href="/task/{{task.id}}">{{task.title}}</a>
+                        <a href="delete/{{task.id}}" class="delete-btn"><i class="fas fa-trash-alt" style="float: right; font-size:13px; margin-left: 10px;"></i></a>     
+                        <a href="edit/{{task.id}}"><i class="fa fa-edit" style="font-size:15px; float: right;" ></i></a>
+
+                        </td>
+					</tr>
+					{% endfor %}
+                </table>
+                
+                <div class="pag" style="text-align: center; margin-top: 3%; ">
+                    {% if tasks.has_previous %}
+                        <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left" style="color: #3a76d6;"></i></a>
+                    {% endif %}
+
+                    {% if tasks.paginator.num_pages %}
+                    <span class="current" >
+                        {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+                    </span>
+                    {% endif %}
+                    
+                    {% if tasks.has_next %}
+                        <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right" style="color: #3a76d6;"></i></a>
+                    {% endif %}
+                </div>
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

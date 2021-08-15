@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Feed - Brascola</strong></h2>
+			<div id="main3">
+                <h3>{{task.title}}</h3>
+				<p>{{task.description}}</p>
+				{% if task.foto %}
+					<p><img src="{{ task.foto.url }}" alt="" style="max-width: 100%;"></p>	
+				{% endif %}	
+				{% if task.foto2 %}
+				<p><img src="{{ task.foto2.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto3 %}
+				<p><img src="{{ task.foto3.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto4 %}
+				<p><img src="{{ task.foto4.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.btn-btn-success{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+    margin-top: 5px;
+}
+
+#id_title{
+    width: 80%;
+    border-radius: 5px;
+    
+}
+
+#id_password{
+    width: 40%;
+    border-radius: 5px;
+    
+}
+#id_username{
+    width: 40%;
+    border-radius: 5px;
+    
+}
+
+#id_description{
+    width: 80%;
+    min-width: 50%;
+    max-width: 100%;
+    border-radius: 5px;
+    
+
+}
+</style>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Realizar Login</strong></h2>
+			<div id="main3">
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+
+                    {{ form.as_p }}
+                    <button type="submit" class="btn-btn-success">Entrar</button>
+                </form>
+		
+				
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

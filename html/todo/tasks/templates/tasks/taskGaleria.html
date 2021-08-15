@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Galeria - Brascola</strong></h2>
+			<div id="main3">
+                <h3>{{task.title}}</h3>
+				<p>{{task.description}}</p>
+				{% if task.foto %}
+					<p><img src="{{ task.foto.url }}" alt="" style="max-width: 100%;"></p>	
+				{% endif %}	
+				{% if task.foto2 %}
+				<p><img src="{{ task.foto2.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto3 %}
+				<p><img src="{{ task.foto3.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto4 %}
+				<p><img src="{{ task.foto4.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto5 %}
+				<p><img src="{{ task.foto5.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto6 %}
+				<p><img src="{{ task.foto6.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto7 %}
+				<p><img src="{{ task.foto7.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto8 %}
+				<p><img src="{{ task.foto8.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto9 %}
+				<p><img src="{{ task.foto9.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto10 %}
+				<p><img src="{{ task.foto10.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto11 %}
+				<p><img src="{{ task.foto11.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto12 %}
+				<p><img src="{{ task.foto12.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto13 %}
+				<p><img src="{{ task.foto13.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto14 %}
+				<p><img src="{{ task.foto14.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto15 %}
+				<p><img src="{{ task.foto15.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto16 %}
+				<p><img src="{{ task.foto16.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto17 %}
+				<p><img src="{{ task.foto17.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto18 %}
+				<p><img src="{{ task.foto18.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto19 %}
+				<p><img src="{{ task.foto19.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				{% if task.foto20 %}
+				<p><img src="{{ task.foto20.url }}" alt="" style="max-width: 100%;"></p>
+				{% endif %}	
+				
+
+				
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

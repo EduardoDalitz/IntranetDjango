@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.btn-btn-success{
+    background-color:#3a76d6;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+    border-style: inherit;
+}
+
+#id_title{
+    width: 80%;
+    border-radius: 8px;
+    
+}
+
+#id_description{
+    width: 80%;
+    min-width: 50%;
+    max-width: 100%;
+    border-radius: 8px;
+
+}
+</style>
+<div id="bg">
+	<div class="wrap">
+		<!-- main -->
+		<div id="main">
+			<h2 class="inner">Galeria - Brascola</strong></h2>
+			<div id="main3">
+                <h2>Adicionar Álbuns</h2>
+                <form method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn-btn-success" id="Criar tarefa" value="Criar Álbum">
+                </form>
+		
+				
+			</div>
+				
+		</div>
+			<!-- /main -->
+
+	</div>
+</div>
+{% endblock %}

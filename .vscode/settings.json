@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.port": 5501,
+    "totvsLanguageServer.welcomePage": false,
+    "code-runner.executorMap": {
+        "python": "set PYTHONIOENCODING=utf8 && python"
+    }
+}
